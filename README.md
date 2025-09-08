@@ -39,10 +39,10 @@ Se utilizarán tecnicas de Fast Prompting para:
 
 # Metodologia
 
-1- Seleccionar una noticia falsa (real o inventada)
-2- Probar un prompt basico ("Es verdadera esta noticia"?)
-3- Refinar con Fast Prompting - actua como un verificador de hechos. Busca inconsistencias, menciona fuentes confiables y responde en un maximo de 3 puntos.
-4- Comparar outputs y documentar resultados con el notebook.
+* 1- Seleccionar una noticia falsa (real o inventada)
+* 2- Probar un prompt basico ("Es verdadera esta noticia"?)
+* 3- Refinar con Fast Prompting - actua como un verificador de hechos. Busca inconsistencias, menciona fuentes confiables y responde en un maximo de 3 puntos.
+* 4- Comparar outputs y documentar resultados con el notebook.
 
 ---
 
