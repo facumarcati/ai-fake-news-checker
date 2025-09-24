@@ -1,67 +1,92 @@
-# Introduccion
+# AI Fake News Checker
 
-La proliferación de noticias falsas sobre salud, politica y temas sociales genera desinformacion y afecta la toma de decisiones de las personas.
-Este proyecto propone una guia asistida por IA que ayuda a verificar, resumir y simplificar informacion, facilitando el acceso a contenido confiable.
+## Resumen
+Este proyecto propone una **POC (Proof of Concept)** que utiliza IA para abordar el problema de la desinformación digital.  
+Se emplean dos enfoques:  
+1. **Texto→Texto**: un modelo de lenguaje (LLM) analiza noticias, verifica su veracidad y genera un resumen claro.  
+2. **Texto→Imagen**: una herramienta externa (NightCafe / Stable Diffusion) genera imágenes ilustrativas que acompañan la explicación.
 
----
-
-# Problema
-
-* Circulacion masiva de informacion engañosa en redes sociales y medios digitales.
-* Dificultad para que el usuario comun evalúe la veracidad de las fuentes
-* Impacto social negativo de la desinformacion en temas sensibles.
+El objetivo es demostrar cómo las técnicas de **Fast Prompting** permiten mejorar la calidad de las verificaciones y optimizar recursos.
 
 ---
 
-# Propuesta de solución
+## Introducción
 
-Se utilizarán tecnicas de Fast Prompting para:
-* Verificacion - comparar una noticia con fuentes confiables.
-* Resumen - generar una version clara y accesible para el usuario final.
+### Problema
+La circulación masiva de noticias falsas en redes sociales y medios digitales genera confusión y afecta la toma de decisiones de las personas.  
+Temas como salud, política o seguridad se ven especialmente afectados por la desinformación.  
 
----
-
-# Justificacion de la viabilidad
-
-* Uso de modelos accesibles y disponibles publicamente como OpenAI o Gemini y plataformas de generacion de imagenes como Stable Diffusion.
-* Bajo costo: se optimizan los prompts para reducir la cantidad de consultas necesarias.
-* Proyecto modular, implementable dentro de un Jupyter Notebook en etapas simples.
+### Propuesta de solución
+Este proyecto plantea un **asistente IA** que:  
+- Verifica si una noticia es verdadera, falsa o dudosa.  
+- Resume la información de forma clara y accesible.  
+- Genera material visual (imágenes ilustrativas) para reforzar la comprensión.  
 
 ---
 
-# Objetivos 
-
-* Demostrar como el Fast Prompting mejora la verificacion de noticias falsas.
-* Optimizar las consultas a la API para hacer el proyecto rentable.
-* Producir un output claro, resumido y confiable para el usuario final.
-
----
-
-# Metodologia
-
-* 1- Seleccionar una noticia falsa (real o inventada)
-* 2- Probar un prompt basico ("Es verdadera esta noticia"?)
-* 3- Refinar con Fast Prompting - actua como un verificador de hechos. Busca inconsistencias, menciona fuentes confiables y responde en un maximo de 3 puntos.
-* 4- Comparar outputs y documentar resultados con el notebook.
+## Justificación de la viabilidad
+- Los modelos de lenguaje (OpenAI GPT o equivalentes) están disponibles públicamente.  
+- La generación de imágenes puede hacerse con herramientas gratuitas (Stable Diffusion, NightCafe).  
+- El enfoque modular permite implementar todo en un Jupyter Notebook sin requerir grandes recursos.  
+- Los prompts optimizados reducen el costo de uso de APIs.  
 
 ---
 
-# Herramientas y tecnologias
-
-* Jupyter Notebook (POC)
-* OpenAi o Gemini (texto)
-* Stable Diffusion (imagenes)
-* Tecnicas de Fast Prompting
-  * Claridad y concision.
-  * Restricciones de formato
-  * Few shot prompting
+## Objetivos
+- Demostrar que el **Fast Prompting** mejora la verificación de noticias falsas.  
+- Optimizar consultas a la API para mantener el proyecto accesible.  
+- Entregar resultados claros, resumidos y confiables al usuario final.  
+- Incorporar imágenes generadas automáticamente como complemento visual.  
 
 ---
 
-# Implementacion
+## Metodología
+1. Seleccionar un conjunto de noticias (falsas, verdaderas y dudosas).  
+2. Probar un **prompt básico** (“¿Es verdadera esta noticia?”).  
+3. Refinar el prompt aplicando técnicas de **Fast Prompting** (rol, few-shot, formato de respuesta en puntos).  
+4. Comparar outputs y documentar mejoras.  
+5. Generar imágenes ilustrativas con herramientas externas.  
+6. Evaluar la claridad, consistencia y utilidad de los resultados.  
 
-* El notebook va a mostrar:
-  1- Prompt inicial vs Prompt refinado
-  2- Comparacion de resultados
-  3- Ejemplo de como el refinamiento mejora la precision y claridad
-* Se medirá el costo en consultas a la API y se documentará como se optimizó el flujo
+---
+
+## Herramientas y tecnologías
+- **Jupyter Notebook** (implementación).  
+- **Modelos de lenguaje**: OpenAI GPT-4o mini (texto→texto).  
+- **Generadores de imagen**: Stable Diffusion / NightCafe (texto→imagen).  
+- **Técnicas de Fast Prompting**:  
+  - Definición de roles.  
+  - Restricciones de formato.  
+  - Respuestas concisas.  
+  - Few-shot prompting.  
+
+---
+
+## Implementación
+La notebook (`notebooks/ia_fake_news_checker.ipynb`) incluye:  
+- Prompt básico vs. prompt refinado.  
+- Comparación de resultados con varias noticias.  
+- Ejemplo de optimización de consultas a la API.  
+- Celda con prompts de generación de imagen y visualización de resultados.  
+
+---
+
+## Resultados
+- El prompt básico devuelve respuestas genéricas y poco confiables.  
+- El Fast Prompting produce resultados más estructurados, con evidencias y recomendaciones claras.  
+- La combinación de texto→texto e imágenes facilita la comprensión y aumenta el valor comunicativo.  
+
+---
+
+## Conclusiones
+- Se lograron los objetivos propuestos: demostrar mejoras con Fast Prompting y complementar con generación de imágenes.  
+- El proyecto es **viable, económico y escalable**: puede crecer con datasets reales de noticias y más técnicas de IA.  
+- La propuesta muestra cómo IA puede ser un aliado en la lucha contra la desinformación.  
+
+---
+
+## Referencias
+- OpenAI API docs.  
+- Stable Diffusion Web UI.  
+- NightCafe Studio.  
+- Material del curso: “IA: Entretejiendo Imaginación y Algoritmos”.
